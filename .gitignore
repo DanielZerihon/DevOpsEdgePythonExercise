@@ -1,5 +1,6 @@
+.env
 testing_folder/*
 dist/*
-src/*
-.env
+wheel/src/details_library/*.pyc
 wheel/src/details_library/__pycache__/*
+wheel/src/details_library/details_library.egg-info/*
