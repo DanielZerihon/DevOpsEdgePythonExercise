@@ -1,0 +1,10 @@
+pyproject.toml
+src/details_library/__init__.py
+src/details_library/cli.py
+src/details_library/csv_module.py
+src/details_library.egg-info/PKG-INFO
+src/details_library.egg-info/SOURCES.txt
+src/details_library.egg-info/dependency_links.txt
+src/details_library.egg-info/entry_points.txt
+src/details_library.egg-info/requires.txt
+src/details_library.egg-info/top_level.txt

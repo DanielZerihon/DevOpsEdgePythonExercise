@@ -1,0 +1,4 @@
+[console_scripts]
+add-record = details_library.cli:add_record
+download-csv = details_library.cli:download_csv
+retrieve-record = details_library.cli:retrieve_record

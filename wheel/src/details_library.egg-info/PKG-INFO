@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: details_library
+Version: 0.5.1
+Requires-Dist: boto3
+Requires-Dist: click
