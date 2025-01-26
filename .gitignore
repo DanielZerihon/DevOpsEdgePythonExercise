@@ -3,5 +3,5 @@ testing_folder/*
 dist/*
 wheel/src/details_library/*.pyc
 wheel/src/details_library/__pycache__/*
-wheel/src/details_library/details_library.egg-info
+wheel/src/details_library/details_library.egg-info/
 
