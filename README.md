@@ -19,7 +19,7 @@ Environment variables are used for configuration, and dependencies are managed t
 - Includes build files for packaging the Python application.
 - Uses a CLI to the Python library so the command can be executed from the terminal as a command line.
 
-## Directory Structure
+## Directory Structure-complite!!!
 
 ├── 
 
