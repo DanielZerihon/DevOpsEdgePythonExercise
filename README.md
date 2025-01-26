@@ -1,6 +1,3 @@
-Here's the entire README content in a single structure for you to copy:
-
-```
 # DevOpsEdgePythonExercise
 
 This repository demonstrates the implementation of a Flask-based bot that interacts with Slack and allows the management of CSV files stored in AWS S3. It includes a set of scripts and configuration files for packaging and deploying the bot into a containerized environment using Docker.
@@ -30,7 +27,7 @@ It uses `Flask` to set up a simple web server with routes for the above function
 - Includes build files for packaging the Python application.
 
 ## Directory Structure
-```
+
 ├── bot.py                  # Main application file containing Flask routes and Slack integration.
 ├── build                    # Build-related files (e.g., pyproject.toml).
 │   └── pyproject.toml       # Build configuration for packaging the project.
@@ -39,7 +36,7 @@ It uses `Flask` to set up a simple web server with routes for the above function
 └── wheel                    # Python wheel package files and source code.
     └── src
         └── details_library  # Python package for managing CSV files in AWS S3.
-```
+
 
 ## Setup Instructions
 
