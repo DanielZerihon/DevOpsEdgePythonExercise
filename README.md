@@ -1,14 +1,16 @@
 # DevOpsEdgePythonExercise
 
-This repository demonstrates the implementation of a Flask-based bot that interacts with Slack and allows the management of CSV files stored in AWS S3. It includes a set of scripts and configuration files for packaging and deploying the bot into a containerized environment using Docker.
+This repository demonstrates the implementation of a Flask-based bot that interacts with Slack and allows the management of CSV files stored in AWS S3.  
+It includes a set of scripts and configuration files for packaging and deploying the bot into a containerized environment using Docker.
 
 ## Overview
+
 The bot allows the following functionalities:
 1. **Download CSV**: Download a CSV file stored in AWS S3 and upload it to a Slack channel.
 2. **Get Record**: Retrieve a specific record from the CSV file by name.
 3. **Add Record**: Add a new record to the CSV file with name, phone number, and email.
 
-It uses `Flask` to set up a simple web server with routes for the above functionalities. 
+It uses `Flask` to set up a simple web server with routes for the above functionalities.  
 Environment variables are used for configuration, and dependencies are managed through `requirements.txt`.
 
 ## Features
@@ -16,12 +18,25 @@ Environment variables are used for configuration, and dependencies are managed t
 - Uses AWS S3 for storing and retrieving CSV files.
 - Allows adding and retrieving records from the CSV file.
 - Dockerized for easy deployment.
-- Includes build files for packaging the Python application.
-- Uses a CLI to the Python library so the command can be executed from the terminal as a command line.
+- Uses a CLI for the Python library, enabling the command to be executed from the terminal as a command line.
 
-## Directory Structure-complite!!!
+## Directory Structure
 
-├── 
+```
+├── Dockerfile
+├── README.md
+├── bot.py
+├── requirements.txt
+└── wheel
+    ├── dist
+    │   └── details_library-0.5.1-py3-none-any.whl
+    ├── pyproject.toml
+    └── src
+        └── details_library
+            ├── __init__.py
+            ├── cli.py
+            └── csv_module.py
+```
 
 ## Setup Instructions
 
@@ -31,7 +46,7 @@ Environment variables are used for configuration, and dependencies are managed t
    cd DevOpsEdgePythonExercise
    ```
 
-2. Define the environment variables in the `.env` file, as the following:
+2. Define the environment variables in the `.env` file as follows:
    ```
    SLACK_TOKEN=<your_slack_token>
    aws_access_key_id=<your_aws_access_key_id>
@@ -39,58 +54,52 @@ Environment variables are used for configuration, and dependencies are managed t
    SIGNING_SECRET=<your_slack_signing_secret>
    ```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. (Optional) Build the Python package using `pyproject.toml` and `setuptools`:
-   ```bash
-   python -m build
-   ```
-
-## How to Use
-### Docker Build and Run
-1. Build the Docker image:
+3. Build the Docker image:
    ```bash
    docker build -t slack-bot .
    ```
 
-2. Run the Docker container:
+4. Run the Docker container:
    ```bash
-   docker run -p 5000:5000 --env-file .env slack-bot
+   docker run -p 5000:5000 slack-bot
    ```
 
-3. The bot will be available at `http://localhost:5000` and you can interact with it via Slack.
+5. The bot will now be available at `http://localhost:5000`.
+
+6. Install `ngrok` on your VM.
+
+7. Run `ngrok` on port 5000:
+   ```bash
+   ngrok http 5000
+   ```
+
+8. Go to the Slack API and configure the Slash Commands URL with the `ngrok` forwarding address.
+
+9. Enjoy! 🎉
+
+---
+
+## BONUS - CLI Commands
+
+You can execute the following CLI commands from the terminal as part of the Python library:
+1. get in the docker container: 
+```bash
+sudo docker exec -it <CONTAINER_ID> bash
+```
+2. Run each command you like:
+- `retrieve-record`
+- `add-record`
+- `download-csv`
 
 ### Flask Routes
-- **/download**: Uploads the CSV file from AWS S3 to a Slack channel.
-  - Method: POST
-  - Parameters: `channel_id`
 
-- **/get**: Retrieves a specific record from the CSV file.
-  - Method: POST
-  - Parameters: `text` (record name), `channel_id`
+- **/download**: Uploads the CSV file from AWS S3 to a Slack channel.  
+  - Method: POST  
 
-- **/add**: Adds a new record to the CSV file.
-  - Method: POST
-  - Parameters: `text` (format: `<name>,<phone>,<email>`), `channel_id`
+- **/get**: Retrieves a specific record from the CSV file.  
+  - Method: POST  
+  - Parameters: `text` (record name)
 
-## Build and Run
-To build and run the bot as a containerized application:
-
-1. Build the Docker image:
-   ```bash
-   docker build -t slack-bot .
-   ```
-
-2. Run the container:
-   ```bash
-   docker run -p 5000:5000 --env-file .env slack-bot
-   ```
-
-3. Visit `http://localhost:5000` to interact with the bot via Slack.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+- **/add**: Adds a new record to the CSV file.  
+  - Method: POST  
+  - Parameters: `text` (format: `<name>,<phone>,<email>`)
