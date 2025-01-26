@@ -1,4 +1,5 @@
 # DevOpsEdgePythonExercise
+![image](https://github.com/user-attachments/assets/4fd0e0d9-267d-4b2c-82d4-d788e27faebe)
 
 This repository demonstrates the implementation of a Flask-based bot that interacts with Slack and allows the management of CSV files stored in AWS S3.  
 It includes a set of scripts and configuration files for packaging and deploying the bot into a containerized environment using Docker.
