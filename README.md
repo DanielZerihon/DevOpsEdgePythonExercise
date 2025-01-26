@@ -2,22 +2,14 @@
 
 This repository demonstrates the implementation of a Flask-based bot that interacts with Slack and allows the management of CSV files stored in AWS S3. It includes a set of scripts and configuration files for packaging and deploying the bot into a containerized environment using Docker.
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Directory Structure](#directory-structure)
-- [Setup Instructions](#setup-instructions)
-- [How to Use](#how-to-use)
-- [Build and Run](#build-and-run)
-- [License](#license)
-
 ## Overview
 The bot allows the following functionalities:
 1. **Download CSV**: Download a CSV file stored in AWS S3 and upload it to a Slack channel.
 2. **Get Record**: Retrieve a specific record from the CSV file by name.
 3. **Add Record**: Add a new record to the CSV file with name, phone number, and email.
 
-It uses `Flask` to set up a simple web server with routes for the above functionalities. Environment variables are used for configuration, and dependencies are managed through `requirements.txt`.
+It uses `Flask` to set up a simple web server with routes for the above functionalities. 
+Environment variables are used for configuration, and dependencies are managed through `requirements.txt`.
 
 ## Features
 - Interacts with Slack using the `slack-sdk`.
@@ -25,18 +17,11 @@ It uses `Flask` to set up a simple web server with routes for the above function
 - Allows adding and retrieving records from the CSV file.
 - Dockerized for easy deployment.
 - Includes build files for packaging the Python application.
+- Uses a CLI to the Python library so the command can be executed from the terminal as a command line.
 
 ## Directory Structure
 
-├── bot.py                  # Main application file containing Flask routes and Slack integration.
-├── build                    # Build-related files (e.g., pyproject.toml).
-│   └── pyproject.toml       # Build configuration for packaging the project.
-├── Dockerfile               # Dockerfile to containerize the bot application.
-├── requirements.txt         # List of Python dependencies.
-└── wheel                    # Python wheel package files and source code.
-    └── src
-        └── details_library  # Python package for managing CSV files in AWS S3.
-
+├── 
 
 ## Setup Instructions
 
@@ -46,7 +31,7 @@ It uses `Flask` to set up a simple web server with routes for the above function
    cd DevOpsEdgePythonExercise
    ```
 
-2. Create a `.env` file in the root directory and add the following environment variables:
+2. Define the environment variables in the `.env` file, as the following:
    ```
    SLACK_TOKEN=<your_slack_token>
    aws_access_key_id=<your_aws_access_key_id>
