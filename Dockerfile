@@ -7,7 +7,7 @@ COPY wheel/dist/details_library-0.5.1-py3-none-any.whl /app/
 
 RUN apt-get update && apt-get install -y vim
 RUN pip install -r requirements.txt
-RUN pip install /app/details_library-0.4.1-py3-none-any.whl
+RUN pip install /app/details_library-0.5.1-py3-none-any.whl
 
 COPY . .
 
