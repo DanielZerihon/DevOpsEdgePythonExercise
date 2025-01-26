@@ -1,0 +1,4 @@
+Flask
+slack-sdk
+python-dotenv
+aiohttp
