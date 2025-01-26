@@ -42,7 +42,7 @@ Environment variables are used for configuration, and dependencies are managed t
 
 1. Clone the repository:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/DanielZerihon/DevOpsEdgePythonExercise.git
    cd DevOpsEdgePythonExercise
    ```
 
