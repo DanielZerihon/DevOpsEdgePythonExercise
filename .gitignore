@@ -1,9 +1,5 @@
 testing_folder/*
 dist/*
-<<<<<<< Updated upstream
 src/*
 .env
-=======
-src/details_library.egg-info/*
-__pycache*
->>>>>>> Stashed changes
+wheel/src/details_library/__pycache__/*
