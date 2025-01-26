@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "details_library"
+version = "0.4.1"
+dependencies = ["boto3", "click"]
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["details_library"]
+
+[project.scripts]
+download-csv = "details_library.cli:download_csv"
+add-record = "details_library.cli:add_record"
+retrieve-record = "details_library.cli:retrieve_record"
