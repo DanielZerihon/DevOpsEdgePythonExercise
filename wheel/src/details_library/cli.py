@@ -54,6 +54,7 @@ def retrieve_record(access_key, secret_key, bucket, key, name, local_path):
         print(f"Error: {e}")
 
 # Create the CLI group and add commands
+# click is an freamework for creating a CLI in python
 @click.group()
 def cli():
     """Creating Command Line Interface for CSVManager"""
